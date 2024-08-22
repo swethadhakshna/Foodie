@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Icons');
+
+* {
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+mat-icon {
+    color: gray;
+    font-family: 'Material Icons', sans-serif; 
+    vertical-align: middle;
+}
+
+.user {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.user img {
+    margin-top: 7px;
+    width: 120px;
+    height: 120px;
+}
+
+.user .name {
+    color: white;
+}
+
+.user .mail {
+    margin-top: -16px;
+    color: #8997ac;
+}
+.menu_head{
+    color: #466be0;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+.menu_item{
+    .menu_button{
+        display: block;
+        width: 100%;
+        position: relative;
+        display: flex;
+        padding-left: 40px;
+        margin-bottom: 10px;
+    }
+    .menu_button span{
+        margin-left: 13px;
+        color: white;
+    }
+    .menu_button:hover{
+        background: #2c3344;
+    }
+}

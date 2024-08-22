@@ -1,0 +1,237 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.left_section {
+  flex: 1;
+}
+.right-addBtn {
+  flex: 1;
+  text-align: right;
+}
+.add-restaurant-btn {
+  background-color: #0f172a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.restaurant-form {
+  background-color: #f9f9f9;
+  padding: 5% 10%;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+  margin: 20px 15px 10px 15px;
+}
+.restaurant-form div {
+  margin-bottom: 15px;
+}
+.restaurant-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.restaurant-form input,
+.restaurant-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.restaurant-form button {
+  background-color: #0f172a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.restaurant-list {
+  margin-top: 20px;
+  padding: 0px 30px;
+}
+
+.restaurant-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.restaurant-card h3 {
+  margin: 10px 0;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.restaurant-card button {
+  background : #0f172a;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+}
+
+.headingForm {
+  display: flex;
+  justify-content: space-between;
+}
+
+::ng-deep .success-snackbar {
+  background-color: #057509; 
+  color: #fff; 
+}
+.name {
+  color: #0f172a;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.noData {
+  text-align: center;
+}
+
+.search_container input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+.is-invalid {
+  border-color: #dc3545 !important; 
+}
+
+.invalid-feedback {
+  color: #dc3545; 
+  font-size: 0.875em;
+}
+
+.search_container {
+  flex: 2;
+}
+
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .left_section, .right-addBtn {
+      text-align: center;
+      width: 100%;
+  }
+
+  .search_container {
+      width: 100%;
+      margin-top: 10px;
+  }
+
+  .search_container input {
+      width: 94%; /* Full width on smaller screens */
+      max-width: none; /* Remove max-width constraint */
+  }
+
+  .right-addBtn {
+      margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search_container input {
+      padding: 8px; /* Reduce padding on very small screens */
+  }
+
+  .add-restaurant-btn {
+      width: 100%;
+      font-size: 14px; /* Adjust font size for small screens */
+  }
+}
+
+@media(max-width: 1110px) {
+  .search_container input {
+      width: 90%; /* Full width on smaller screens */
+      max-width: none; /* Remove max-width constraint */
+  }
+}
+
+@media(max-width: 965px) {
+  .search_container input {
+      width: 85%; /* Full width on smaller screens */
+      max-width: none; /* Remove max-width constraint */
+  }
+}
+.restaurant-card {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.image_container {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.image_list {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.right-section {
+  flex-grow: 1;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .restaurant-card {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .image_container {
+      margin-bottom: 10px;
+  }
+
+  .right-section {
+      padding-left: 0;
+      text-align: center;
+  }
+}

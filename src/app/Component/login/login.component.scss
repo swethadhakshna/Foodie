@@ -1,0 +1,79 @@
+
+.fluid-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+  
+  .image{
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  
+    img {
+        width: 100px;
+    }
+  }
+  .loginBtn{
+    width: 100%;
+    background: #2b2242;
+    padding: 11px;
+    border: 1px solid #2b2242;
+    border-radius: 4px;
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 23px;
+  }
+  ::ng-deep .success-snackbar {
+    background-color: #057509; 
+    color: #fff; 
+  }
+  
+.login_mid {
+    width: 100%;
+    max-width: 400px;
+    float: none;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.loginform  {
+    width: 100%;
+}
+
+input{
+    width: 98%;
+    padding: 13px 0px 13px 3px;
+    border-radius: 4px;
+    color: grey;
+    border: 2px solid grey;
+    margin-bottom: 3px;
+}
+.content{
+    padding: 0px;
+}
+.errormsg{
+    color: red;
+}
+.space{
+    margin-top: 20px;
+}
+label{
+  margin-bottom: 0px !important;
+}
+.password-container {
+  position: relative;
+}
+
+.toggle-password-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+

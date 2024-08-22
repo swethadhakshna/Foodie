@@ -1,0 +1,22 @@
+<div class="navbar">
+    <div class="top">
+        <mat-icon></mat-icon>
+    </div>
+    <div class="user">
+        <img src="./../../../assets/image/admin_img.png" alt="">
+        <h4 class="name">Admin</h4>
+        <p class="mail">{{email}}</p>
+    </div>
+    <div class="menu">
+        <div class="menu_item">
+            <button mat-button class="menu_button"  [routerLink]="['/restaurant']">
+                <mat-icon>dashboard</mat-icon>
+                <span>Restaurants</span>
+            </button>
+            <button mat-button class="menu_button"  (click)="logout()">
+                <mat-icon>logout</mat-icon>
+                <span>Logout</span>
+            </button>
+        </div>
+    </div>
+</div>

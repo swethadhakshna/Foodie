@@ -1,0 +1,122 @@
+<div *ngIf="!showForm" >
+<div class="container">
+    <div class="left_section">
+      <h2>Add Restaurant</h2>
+    </div>
+    <div class="search_container">
+        <input type="text" [(ngModel)]="searchTerm" placeholder="Search restaurants..." (input)="filterRestaurants()">
+    </div>
+    <div class="right-addBtn">
+      <button (click)="toggleForm()" class="add-restaurant-btn">+ Add Restaurant</button>
+    </div>
+</div>
+
+<div *ngIf="!imageShow" class="noData">
+   <img src="./../../../assets/image/7265556.webp">
+</div>
+
+  <div class="restaurant-list">
+    <div *ngFor="let restaurant of restaurants" class="restaurant-card">
+      <div class="image_container">
+        <img [src]="restaurant.image" alt="{{restaurant.name}}" class="image_list">
+      </div>
+      <div class="right-section">
+        <h3 class="name">{{restaurant.name}}</h3>
+        <p>{{restaurant.description}}</p>
+        <p>{{restaurant.location}}</p>
+        <p>{{restaurant.email}}</p>
+        <p>Owner : {{restaurant.ownerName}} ({{restaurant.ownerContact}})</p>
+        <div>
+          <button (click)="editRestaurant(restaurant)">
+             <mat-icon>edit</mat-icon>
+          </button>
+          <button (click)="deleteRestaurant(restaurant)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div *ngIf="showForm" class="restaurant-form">
+    <form [formGroup]="restaurantForm" (ngSubmit)="onSubmit()">
+        <div class="headingForm">
+          <h2>Add Restaurant</h2>
+          <button (click)="backToList()">Back</button>
+        </div>
+      
+        <div>
+          <label for="name">Restaurant Name</label>
+          <input id="name" formControlName="name" type="text" [ngClass]="{'is-invalid': isFieldInvalid('name')}" required>
+          <div *ngIf="isFieldInvalid('name')" class="invalid-feedback">
+            Restaurant Name is required.
+          </div>
+        </div>
+      
+        <div>
+          <label for="number">Restaurant Number</label>
+          <input id="number"  formControlName="number" type="text" [ngClass]="{'is-invalid': isFieldInvalid('number')}" required
+            maxlength="10" minlength="10" oninput="this.value=this.value.replace(/[^0-9-,.,;'&/.()]|^ /g,'')">
+          <div *ngIf="isFieldInvalid('number')" class="invalid-feedback">
+            Restaurant Number is required.
+          </div>
+        </div>
+      
+        <div>
+          <label for="email">Restaurant Email</label>
+          <input id="email" formControlName="email" type="email" [ngClass]="{'is-invalid': isFieldInvalid('email')}" required>
+          <div *ngIf="isFieldInvalid('email')" class="invalid-feedback">
+            Valid Restaurant Email is required.
+          </div>
+        </div>
+      
+        <div>
+          <label for="location">Location</label>
+          <input id="location" formControlName="location" type="text" [ngClass]="{'is-invalid': isFieldInvalid('location')}" required>
+          <div *ngIf="isFieldInvalid('location')" class="invalid-feedback">
+            Location is required.
+          </div>
+        </div>
+      
+        <div>
+          <label for="description">Description</label>
+          <textarea id="description" formControlName="description" [ngClass]="{'is-invalid': isFieldInvalid('description')}" required></textarea>
+          <div *ngIf="isFieldInvalid('description')" class="invalid-feedback">
+            Description is required.
+          </div>
+        </div>
+      
+        <div>
+          <label for="ownerName">Owner Name</label>
+          <input id="ownerName" formControlName="ownerName" type="text" [ngClass]="{'is-invalid': isFieldInvalid('ownerName')}" required
+          oninput="this.value=this.value.replace(/[^A-Za-z,.,;'&/.()]|^ /g,'')">
+          <div *ngIf="isFieldInvalid('ownerName')" class="invalid-feedback">
+            Owner Name is required.
+          </div>
+        </div>
+      
+        <div>
+          <label for="ownerContact">Owner Contact Number</label>
+          <input id="ownerContact" formControlName="ownerContact" type="text" [ngClass]="{'is-invalid': isFieldInvalid('ownerContact')}" required
+           maxlength="10" minlength="10" oninput="this.value=this.value.replace(/[^0-9-,.,;'&/.()]|^ /g,'')">
+          <div *ngIf="isFieldInvalid('ownerContact')" class="invalid-feedback">
+            Owner Contact Number is required.
+          </div>
+        </div>
+      
+        <div>
+          <label for="image">Restaurant Image</label>
+          <input id="image" type="file" (change)="onFileChange($event)">
+          <!-- Display image preview if available -->
+          <img *ngIf="restaurantForm.get('image')?.value" [src]="restaurantForm.get('image')?.value" alt="Image Preview" style="max-width: 200px; margin-top: 10px;">
+        </div>
+      
+        <button type="submit" *ngIf="addFormBtn" >+ Add Restaurant</button>
+        <button type="submit" *ngIf="updateFormBtn">Update Restaurant</button>
+      </form>      
+  </div>
+  
+  
+  
+  

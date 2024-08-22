@@ -1,0 +1,40 @@
+<div class="fluid-container">
+    <div class="login_mid">
+      <form [formGroup]="loginForm" class="loginform" (ngSubmit)="login()">
+        <div class="image">
+          <img src="./../../../assets/image/logo.jpg" alt="image" />
+          <h4>Hey there! Welcome back. You can Log In to view Restaurant</h4>
+        </div>
+        <div class="content">
+          <div class="form-group">
+            <label>Username</label>
+            <input type="text" class="form-control" formControlName="username" placeholder="Username -> Superadmin">
+            <div
+              *ngIf="loginForm.controls['username'].invalid && (loginForm.controls['username'].dirty || loginForm.controls['username'].touched)"
+              class="errormsg">
+                Please enter the email
+            </div>
+          </div>
+          <div class="form-group space">
+            <label>Password</label>
+            <div class="password-container">
+              <input
+                [type]="passwordFieldType"
+                class="form-control"
+                formControlName="password"
+                placeholder="Password -> admin@123">
+              <mat-icon
+                class="toggle-password-icon"
+                (click)="togglePasswordVisibility()">
+                {{ passwordFieldType === 'password' ? 'visibility_off' : 'visibility' }}
+              </mat-icon>
+            </div>
+            <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)" class="errormsg">
+              <span>Please enter the Password</span>
+            </div>
+          </div>
+          <button type="submit" class="loginBtn">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
